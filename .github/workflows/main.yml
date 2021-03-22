@@ -1,0 +1,19 @@
+name: test
+
+
+on:
+  push:
+
+jobs:
+  job1:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: '0' # All History
+
+
+      - name: test (Composite Action)
+        uses: ./composite_actions/test
+
+
