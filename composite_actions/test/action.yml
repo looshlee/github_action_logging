@@ -4,22 +4,8 @@ runs:
   using: "composite"
   steps:
 
-
-    - name: simulate random logs
+    - name: simulate random log
       run: |        
-        for i in {1..1200}
-          do
-            awk -v v=100 'BEGIN{for(i=1;i<=v;i++)print "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt "i}'
-            sleep 1
-        done
-      shell: bash
-
-    - name: simulate test
-      run: |        
-        for i in {1..25}
-          do
-            awk -v v=100 'BEGIN{for(i=1;i<=v;i++)print "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttest "i}'
-            sleep 240
-        done
+        python python_script.py
       shell: bash
 
